@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class ProductoRequest extends FormRequest {
 
@@ -16,7 +17,12 @@ class ProductoRequest extends FormRequest {
 
         return [
             'nombre' => 'required|string|max:150', // nombre requerido[cite: 6]
-            'sku' => 'required|string|max:50|unique:productos,sku,' . $productoId, // sku requerido y único[cite: 6]
+            'sku' => [
+                'required',
+                'string',
+                'max:50',
+                Rule::unique('productos', 'sku')->ignore($productoId),
+            ],
             'precio' => 'required|numeric|min:0', // precio numérico >= 0[cite: 6]
             'stock' => 'required|integer|min:0', // stock entero >= 0[cite: 6]
             'categoria_id' => 'required|exists:categorias,id', // categoria_id existente[cite: 6]

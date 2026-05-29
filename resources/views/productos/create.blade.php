@@ -3,7 +3,6 @@
 @section('content')
     <h1>Registrar Nuevo Producto</h1>
 
-    <!-- Muestra los errores globales de validación -->[cite: 6]
     @if ($errors->any())
         <div class="alert-danger">
             <ul>

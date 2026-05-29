@@ -8,11 +8,19 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder {
     public function run(): void {
-        // Genera al menos 5 categorías y asocia 20 productos[cite: 6]
-        Categoria::factory(5)->create()->each(function ($categoria) {
+        $categorias = [
+            ['nombre' => 'Electrónica', 'descripcion' => 'Dispositivos y accesorios tecnológicos', 'activo' => true],
+            ['nombre' => 'Hogar', 'descripcion' => 'Artículos para la casa y la cocina', 'activo' => true],
+            ['nombre' => 'Moda', 'descripcion' => 'Ropa, calzado y complementos', 'activo' => true],
+            ['nombre' => 'Belleza', 'descripcion' => 'Cuidado personal y cosméticos', 'activo' => true],
+            ['nombre' => 'Deportes', 'descripcion' => 'Equipo deportivo y accesorios', 'activo' => true],
+        ];
+
+        foreach ($categorias as $data) {
+            $categoria = Categoria::create($data);
             Producto::factory(4)->create([
                 'categoria_id' => $categoria->id
             ]);
-        });
+        }
     }
 }

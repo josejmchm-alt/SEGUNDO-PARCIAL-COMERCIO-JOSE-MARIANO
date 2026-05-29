@@ -1,19 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Registrar Nuevo Producto</h1>
+    <div class="page-card form-card">
+        <h1 class="section-title">Registrar Nuevo Producto</h1>
 
-    @if ($errors->any())
-        <div class="alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+        @if ($errors->any())
+            <div class="alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
-    <form action="{{ route('productos.store') }}" method="POST">
+        <form action="{{ route('productos.store') }}" method="POST">
         @csrf
 
         <div class="form-group">
@@ -48,7 +49,10 @@
             <input type="number" name="stock" id="stock" class="form-control" value="{{ old('stock') }}">
         </div>
 
-        <button type="submit" class="btn">Guardar Producto</button>
-        <a href="{{ route('productos.index') }}" class="btn btn-secondary">Cancelar</a>
-    </form>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-warning">Guardar Producto</button>
+                <a href="{{ route('productos.index') }}" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
 @endsection

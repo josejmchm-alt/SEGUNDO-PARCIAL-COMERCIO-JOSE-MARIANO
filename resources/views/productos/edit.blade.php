@@ -1,21 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Modificar Producto: {{ $producto->nombre }}</h1>
+    <div class="page-card form-card">
+        <h1 class="section-title">Modificar Producto: {{ $producto->nombre }}</h1>
 
-    @if ($errors->any())
-        <div class="alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+        @if ($errors->any())
+            <div class="alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
-    <form action="{{ route('productos.update', $producto->id) }}" method="POST">
-        @csrf
-        @method('PUT') <!-- Directiva obligatoria de actualización en Laravel -->[cite: 6]
+        <form action="{{ route('productos.update', $producto->id) }}" method="POST">
+            @csrf
+            @method('PUT') <!-- Directiva obligatoria de actualización en Laravel -->[cite: 6]
 
         <div class="form-group">
             <label for="categoria_id">Categoría</label>
@@ -48,7 +49,10 @@
             <input type="number" name="stock" id="stock" class="form-control" value="{{ old('stock', $producto->stock) }}">
         </div>
 
-        <button type="submit" class="btn">Actualizar Producto</button>
-        <a href="{{ route('productos.index') }}" class="btn btn-secondary">Cancelar</a>
-    </form>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-warning">Actualizar Producto</button>
+                <a href="{{ route('productos.index') }}" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
 @endsection

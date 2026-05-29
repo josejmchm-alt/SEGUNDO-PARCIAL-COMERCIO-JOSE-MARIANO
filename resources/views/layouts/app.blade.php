@@ -10,115 +10,184 @@
             --amazon-yellow: #febd69;
             --amazon-light: #f3f3f3;
             --amazon-dark: #232f3e;
-            --text-dark: #111;
-            --border: #d5d9d9;
+            --surface-dark: #09090b;
+            --surface-mid: #111827;
+            --surface-soft: #141a2d;
+            --text-light: #f8fafc;
+            --text-muted: #cbd5e1;
+            --border: rgba(255,255,255,0.1);
         }
 
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
-            background-color: #eaeded;
-            color: var(--text-dark);
+            background-color: #090b10;
+            color: var(--text-light);
         }
 
         .site-header {
-            background: linear-gradient(90deg, var(--amazon-blue), #232f3e);
+            background: linear-gradient(120deg, #614cfa, #b63bff, #ff6a00);
             color: white;
-            padding: 14px 24px;
+            padding: 18px 24px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 20px;
+            gap: 18px;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
         }
 
         .brand {
-            font-size: 1.4rem;
-            letter-spacing: 0.05em;
-            font-weight: 700;
+            font-size: 1.55rem;
+            letter-spacing: 0.08em;
+            font-weight: 800;
+            text-transform: uppercase;
+            text-shadow: 0 0 18px rgba(255,255,255,0.16);
         }
 
         .brand span {
-            color: var(--amazon-yellow);
+            color: rgba(255, 255, 255, 0.85);
         }
 
         .search-bar {
             flex: 1;
             display: flex;
-            max-width: 700px;
-            border-radius: 4px;
+            max-width: 720px;
+            border-radius: 999px;
             overflow: hidden;
-            border: 1px solid transparent;
-            background: white;
+            border: 1px solid rgba(255,255,255,0.45);
+            background: rgba(255,255,255,0.96);
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.35);
         }
 
         .search-bar input {
             width: 100%;
             border: 0;
-            padding: 12px 14px;
-            font-size: 0.95rem;
+            padding: 14px 18px;
+            font-size: 0.98rem;
             outline: none;
+            color: #2b2b2b;
+            background: transparent;
         }
 
         .search-bar button {
             border: none;
-            background: var(--amazon-yellow);
-            color: var(--amazon-blue);
+            background: linear-gradient(135deg, #fcb045, #fd1d1d);
+            color: white;
             font-weight: 700;
-            padding: 0 18px;
+            padding: 0 24px;
             cursor: pointer;
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+        }
+
+        .search-bar button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 23px rgba(253, 29, 29, 0.25);
         }
 
         .top-actions a {
-            background: var(--amazon-yellow);
-            color: var(--amazon-blue);
+            background: rgba(255,255,255,0.95);
+            color: #2d1f5f;
             text-decoration: none;
-            padding: 10px 18px;
-            border-radius: 4px;
-            font-weight: 700;
+            padding: 12px 22px;
+            border-radius: 999px;
+            font-weight: 800;
             display: inline-flex;
             align-items: center;
+            border: 1px solid rgba(255,255,255,0.8);
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+        }
+
+        .top-actions a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 18px 35px rgba(255, 255, 255, 0.18);
+        }
+
+        .search-bar input {
+            font-size: 1rem;
+        }
+
+        .search-bar button {
+            min-width: 100px;
         }
 
         .main-content {
-            max-width: 1200px;
-            margin: 24px auto;
+            max-width: 1180px;
+            margin: 16px auto 32px;
             padding: 0 16px;
         }
 
         .page-card {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(15, 17, 17, 0.08);
-            padding: 24px;
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.88));
+            border-radius: 24px;
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+            padding: 28px;
             margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.08);
+            backdrop-filter: blur(14px);
+            color: var(--text-light);
         }
 
         .alert-success {
             padding: 14px 18px;
-            background-color: #d4edda;
-            color: #155724;
-            border-radius: 6px;
+            background-color: #e3f9e5;
+            color: #116530;
+            border-radius: 14px;
             margin-bottom: 18px;
+            border: 1px solid rgba(49, 156, 84, 0.18);
         }
 
         .alert-danger {
             padding: 14px 18px;
-            background-color: #f8d7da;
-            color: #721c24;
-            border-radius: 6px;
+            background-color: #fdecef;
+            color: #9b1c22;
+            border-radius: 14px;
             margin-bottom: 18px;
+            border: 1px solid rgba(217, 43, 43, 0.18);
         }
 
         .section-title {
             margin: 0 0 12px;
             font-size: 1.8rem;
             font-weight: 700;
+            color: var(--text-light);
+            text-shadow: 0 0 22px rgba(255,255,255,0.15);
         }
 
         .section-subtitle {
             margin: 0 0 22px;
             color: #555;
             font-size: 0.96rem;
+        }
+
+        .category-menu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .category-chip {
+            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(15, 23, 42, 0.85);
+            padding: 10px 18px;
+            border-radius: 999px;
+            cursor: pointer;
+            color: var(--text-light);
+            font-weight: 700;
+            transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+            box-shadow: 0 0 0 0 rgba(255,255,255,0);
+        }
+
+        .category-chip:hover {
+            transform: translateY(-1px);
+            background: rgba(255,255,255,0.08);
+            box-shadow: 0 0 16px rgba(255,255,255,0.08);
+        }
+
+        .category-chip.active {
+            background: linear-gradient(135deg, #f97316, #e11d48);
+            color: white;
+            border-color: rgba(255,255,255,0.95);
         }
 
         .product-grid {
@@ -128,27 +197,30 @@
         }
 
         .product-card {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 10px;
+            background: linear-gradient(180deg, #111827, #0f172a 100%);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 22px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            min-height: 320px;
-            transition: transform 0.18s ease, box-shadow 0.18s ease;
+            min-height: 340px;
+            transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+            color: var(--text-light);
         }
 
         .product-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+            box-shadow: 0 18px 40px rgba(101, 33, 158, 0.16);
+            border-color: rgba(111, 28, 121, 0.38);
         }
 
         .product-card-header {
-            background: #f7f7f7;
-            padding: 14px 16px;
+            background: linear-gradient(135deg, rgba(239, 114, 214, 0.12), rgba(116, 65, 255, 0.08));
+            padding: 16px 18px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 1px solid rgba(111, 28, 121, 0.08);
         }
 
         .product-card-header .badge {
@@ -159,10 +231,11 @@
             border-radius: 999px;
             text-transform: uppercase;
             letter-spacing: 0.05em;
+            text-shadow: 0 0 12px rgba(255,255,255,0.18);
         }
 
         .product-card-body {
-            padding: 18px 16px 16px;
+            padding: 20px 18px 18px;
             flex: 1;
         }
 
@@ -170,33 +243,38 @@
             margin: 0 0 10px;
             font-size: 1.1rem;
             line-height: 1.3;
+            color: var(--text-light);
+            text-shadow: 0 0 18px rgba(255,255,255,0.12);
         }
 
         .product-card-body p {
             margin: 8px 0;
-            color: #4b4f56;
+            color: var(--text-muted);
             font-size: 0.95rem;
+            text-shadow: 0 0 12px rgba(0,0,0,0.2);
         }
 
         .product-price {
-            color: #b12704;
-            font-size: 1.25rem;
-            font-weight: 800;
-            margin-top: 10px;
+            color: #8b2eff;
+            font-size: 1.35rem;
+            font-weight: 900;
+            margin-top: 12px;
+            text-shadow: 0 0 16px rgba(139, 46, 255, 0.35);
         }
 
         .product-stock {
-            margin-top: 8px;
-            color: #007600;
-            font-weight: 600;
+            margin-top: 10px;
+            color: #5f3dc4;
+            font-weight: 700;
         }
 
         .product-card-actions {
-            padding: 16px;
-            border-top: 1px solid var(--border);
+            padding: 18px;
+            border-top: 1px solid rgba(111, 28, 121, 0.08);
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
+            justify-content: flex-start;
         }
 
         .btn {
@@ -212,24 +290,25 @@
             transition: opacity 0.15s ease;
         }
 
-        .btn:hover { opacity: 0.9; }
+        .btn:hover { opacity: 0.96; transform: translateY(-1px); }
         .btn-primary { background: var(--amazon-blue); color: white; }
-        .btn-secondary { background: #f0f0f0; color: var(--text-dark); }
+        .btn-secondary { background: #111827; color: var(--text-light); border: 1px solid rgba(255,255,255,0.08); box-shadow: inset 0 0 10px rgba(255,255,255,0.04); }
         .btn-warning { background: var(--amazon-yellow); color: var(--amazon-blue); }
         .btn-danger { background: #d93025; color: white; }
         .btn-small { padding: 8px 12px; font-size: 0.9rem; }
 
         .form-group { margin-bottom: 18px; }
         .form-group label { display: block; margin-bottom: 8px; font-weight: 700; }
-        .form-control { width: 100%; padding: 12px 14px; border: 1px solid #c4c4c4; border-radius: 6px; background: #fff; font-size: 0.95rem; }
+        .form-control { width: 100%; padding: 12px 14px; border: 1px solid rgba(255,255,255,0.12); border-radius: 6px; background: #0f172a; color: var(--text-light); font-size: 0.95rem; }
         .form-control:focus { outline: none; border-color: var(--amazon-blue); box-shadow: 0 0 0 3px rgba(19, 25, 33, 0.08); }
 
         .form-card {
-            background: white;
+            background: #0f172a;
             border-radius: 10px;
-            border: 1px solid var(--border);
-            box-shadow: 0 6px 18px rgba(15, 17, 17, 0.06);
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 8px 26px rgba(0, 0, 0, 0.3);
             padding: 26px;
+            color: var(--text-light);
         }
 
         .form-actions {
@@ -251,8 +330,8 @@
     <header class="site-header">
         <div class="brand">Catálogo <span>+</span></div>
         <div class="search-bar">
-            <input type="text" placeholder="Buscar productos, categorías o SKU...">
-            <button type="button">Buscar</button>
+            <input id="product-search" type="text" placeholder="Buscar productos, categorías o SKU...">
+            <button id="search-button" type="button">Buscar</button>
         </div>
         <div class="top-actions">
             <a href="{{ route('productos.create') }}">Nuevo Producto</a>
@@ -266,5 +345,49 @@
 
         @yield('content')
     </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('product-search');
+            const searchButton = document.getElementById('search-button');
+            const categoryButtons = document.querySelectorAll('.category-chip');
+            let activeCategory = '';
+
+            function normalize(text) {
+                return text.toString().trim().toLowerCase();
+            }
+
+            function filterProducts() {
+                const term = searchInput ? normalize(searchInput.value) : '';
+                const cards = document.querySelectorAll('.product-card');
+
+                cards.forEach(card => {
+                    const name = normalize(card.dataset.name || '');
+                    const sku = normalize(card.dataset.sku || '');
+                    const category = normalize(card.dataset.category || '');
+                    const matchesSearch = term === '' || name.includes(term) || sku.includes(term) || category.includes(term);
+                    const matchesCategory = activeCategory === '' || category === normalize(activeCategory);
+                    card.style.display = matchesSearch && matchesCategory ? 'flex' : 'none';
+                });
+            }
+
+            if (searchInput) {
+                searchInput.addEventListener('input', filterProducts);
+            }
+
+            if (searchButton) {
+                searchButton.addEventListener('click', filterProducts);
+            }
+
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    activeCategory = button.dataset.category || '';
+                    filterProducts();
+                });
+            });
+        });
+    </script>
 </body>
 </html>

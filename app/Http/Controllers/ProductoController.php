@@ -11,7 +11,8 @@ class ProductoController extends Controller {
     public function index() {
         // Carga los productos con su categoría usando eager loading para evitar N+1[cite: 6]
         $productos = Producto::with('categoria')->latest()->get();
-        return view('productos.index', compact('productos'));
+        $categorias = Categoria::where('activo', true)->orderBy('nombre')->get();
+        return view('productos.index', compact('productos', 'categorias'));
     }
 
     public function create() {

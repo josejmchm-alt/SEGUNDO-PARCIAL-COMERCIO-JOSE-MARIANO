@@ -16,7 +16,7 @@
 
         <form action="{{ route('productos.update', $producto->id) }}" method="POST">
             @csrf
-            @method('PUT') <!-- Directiva obligatoria de actualización en Laravel -->[cite: 6]
+            @method('PUT') <!-- Directiva obligatoria de actualización en Laravel -->
 
         <div class="form-group">
             <label for="categoria_id">Categoría</label>
